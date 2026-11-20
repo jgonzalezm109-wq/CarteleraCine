@@ -161,7 +161,6 @@ namespace CarteleraCine
                     return;
                 }
 
-                Console.WriteLine($"Función actual: {funcion}");
                 Console.Write("Nuevo precio: ");
                 if (!decimal.TryParse(Console.ReadLine(), out decimal nuevoPrecio) || nuevoPrecio <= 0)
                 {
