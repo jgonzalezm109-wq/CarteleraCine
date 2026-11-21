@@ -53,16 +53,16 @@ namespace CarteleraCine
             Console.WriteLine("5. Eliminar función");
             Console.WriteLine("6. Salir");
             Console.Write("Elige una opción: ");
-            return Console.ReadLine()?.Trim() ?? "";
+            return Console.ReadLine().Trim();
         }
 
         private static void RegistrarFuncion(FuncionRepositorio repo)
         {
             Console.Write("Película: ");
-            string pelicula = (Console.ReadLine() ?? "").Trim();
+            string pelicula = Console.ReadLine().Trim();
 
             Console.Write("Sala: ");
-            string sala = (Console.ReadLine() ?? "").Trim();
+            string sala = Console.ReadLine().Trim();
 
             Console.Write("Precio: ");
             bool precioOk = decimal.TryParse(Console.ReadLine(), out decimal precio);
@@ -160,6 +160,7 @@ namespace CarteleraCine
                     Console.WriteLine("No existe ese Id.");
                     return;
                 }
+
 
                 Console.Write("Nuevo precio: ");
                 if (!decimal.TryParse(Console.ReadLine(), out decimal nuevoPrecio) || nuevoPrecio <= 0)
